@@ -12,7 +12,7 @@
     <parent>
         <groupId>com.smartbear.soapui</groupId>
         <artifactId>soapui-project</artifactId>
-        <version>5.7.1-SNAPSHOT</version>
+        <version>5.7.1-mangosteen</version>
     </parent>
 
     <artifactId>soapui</artifactId>
@@ -195,19 +195,6 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>${log4j2.version}</version>
-        </dependency>
-
-        <!-- In-app analytics -->
-        <dependency>
-            <groupId>com.smartbear.utils.analytics</groupId>
-            <artifactId>analytics-core</artifactId>
-            <version>${analytics.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.smartbear.utils.analytics</groupId>
-            <artifactId>out-app-analytics-provider</artifactId>
-            <version>${analytics.version}</version>
         </dependency>
 
         <!-- JGoodies -->
@@ -501,6 +488,11 @@
             <version>${json-lib.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20090211</version>
+        </dependency>
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>${jackson-version}</version>
@@ -583,6 +575,26 @@
             <version>${org-bouncycastle-bcprov-jdk15on-version}</version>
         </dependency>
         <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>${org-bouncycastle-bcprov-jdk15on-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcmail-jdk15on</artifactId>
+            <version>${org-bouncycastle-bcprov-jdk15on-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.skyscreamer</groupId>
+            <artifactId>jsonassert</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.30</version>
+        </dependency>
+        <dependency>
             <groupId>jtidy</groupId>
             <artifactId>jtidy</artifactId>
             <version>r872-jdk15</version>
@@ -591,6 +603,12 @@
             <groupId>javax.jms</groupId>
             <artifactId>jms</artifactId>
             <version>${javax.jms.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.mail</groupId>
+                    <artifactId>javax.mail-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>hermesjms</groupId>
